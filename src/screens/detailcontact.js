@@ -89,18 +89,6 @@ export default function ContactDetail({route, navigation}) {
   const isFocused = useIsFocused();
   const [contact, setContact] = useState({});
 
-  const deleteContact = async () => {
-    const id = route.params.id;
-    console.log(id);
-    const res = await API.deleteContact(id)
-      .then(result => {
-        navigation.navigate('Home');
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
   useEffect(() => {
     const id = route.params.id;
     console.log(id);
@@ -116,6 +104,18 @@ export default function ContactDetail({route, navigation}) {
     } catch (error) {
       console.log(error.message, 'error');
     }
+  };
+
+  const deleteContact = async () => {
+    const id = route.params.id;
+    console.log(id);
+    const res = await API.deleteContact(id)
+      .then(result => {
+        navigation.navigate('Home');
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
