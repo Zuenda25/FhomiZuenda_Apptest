@@ -12,6 +12,14 @@ target 'FhomiZuenda_Apptest' do
     :hermes_enabled => false
   )
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+  pod 'react-native-safe-area', :path => '../node_modules/react-native-safe-area'
+
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'FhomiZuenda_ApptestTests' do
     inherit! :complete
     # Pods for testing
