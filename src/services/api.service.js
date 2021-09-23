@@ -1,6 +1,6 @@
 import http from '../configs/http-common';
 
-const GET = async (path) => {
+const GET = async path => {
   const res = await http.get(`${path}`);
 
   return res.data;
@@ -18,19 +18,21 @@ const PUT = async (path, params) => {
   return res.data;
 };
 
-const DELETE = async (path) => {
+const DELETE = async path => {
   const res = await http.delete(`${path}`);
 
   return res;
 };
 
 const getContacts = () => GET('/contact');
-const addContact = (params) => POST('/contact', params);
+const getContactDetail = id => GET(`/contact/${id}`);
+const addContact = params => POST('/contact', params);
 const updateContact = (id, params) => PUT(`/contact/${id}`, params);
-const deleteContact = (id) => DELETE(`/contact/${id}`);
+const deleteContact = id => DELETE(`/contact/${id}`);
 
 const restApi = {
   getContacts,
+  getContactDetail,
   addContact,
   updateContact,
   deleteContact,
