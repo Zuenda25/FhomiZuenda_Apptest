@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     borderColor: '#006D84',
     borderBottomWidth: 1,
     marginBottom: 36,
+    color: '#006D84'
   },
   btnContainer: {
     backgroundColor: 'white',
